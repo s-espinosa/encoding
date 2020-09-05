@@ -8,16 +8,16 @@ class Encoder
       if letter == current_character
         current_count += 1
       else
-        encoded = add_characters(encoded, current_count, current_character)
+        encoded = add_encoded_characters(encoded, current_count, current_character)
         current_character = letter
         current_count = 1
       end
     end
 
-    add_characters(encoded, current_count, current_character)
+    add_encoded_characters(encoded, current_count, current_character)
   end
 
-  def self.add_characters(encoded, current_count, current_character)
+  def self.add_encoded_characters(encoded, current_count, current_character)
     encoded + count_as_string(current_count) + current_character
   end
 

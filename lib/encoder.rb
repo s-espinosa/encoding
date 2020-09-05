@@ -13,7 +13,7 @@ class Encoder
       if letter == current_character
         current_count += 1
       else
-        encoded += count_as_string(current_count) + current_character
+        encoded = add_characters(encoded, current_count, current_character)
         current_character = letter
         current_count = 1
       end

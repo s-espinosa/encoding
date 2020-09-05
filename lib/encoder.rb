@@ -5,7 +5,7 @@ class Encoder
     current_count = 0
 
     encoded, current_character, current_count = parse_body(input, encoded, current_character, current_count)
-    add_final_characters(encoded, current_count, current_character)
+    add_characters(encoded, current_count, current_character)
   end
 
   def self.parse_body(input, encoded, current_character, current_count)
@@ -21,9 +21,8 @@ class Encoder
     [encoded, current_character, current_count]
   end
 
-  def self.add_final_characters(encoded, current_count, current_character)
-    encoded += count_as_string(current_count) + current_character
-    encoded
+  def self.add_characters(encoded, current_count, current_character)
+    encoded + count_as_string(current_count) + current_character
   end
 
   def self.count_as_string(count)

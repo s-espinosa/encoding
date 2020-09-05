@@ -4,11 +4,6 @@ class Encoder
     current_character = input[0]
     current_count = 0
 
-    encoded, current_character, current_count = parse_body(input, encoded, current_character, current_count)
-    add_characters(encoded, current_count, current_character)
-  end
-
-  def self.parse_body(input, encoded, current_character, current_count)
     input.each_char do |letter|
       if letter == current_character
         current_count += 1
@@ -18,7 +13,8 @@ class Encoder
         current_count = 1
       end
     end
-    [encoded, current_character, current_count]
+
+    add_characters(encoded, current_count, current_character)
   end
 
   def self.add_characters(encoded, current_count, current_character)

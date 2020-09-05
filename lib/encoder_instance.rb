@@ -11,12 +11,12 @@ class EncoderInstance
       if letter == @current_character
         increment_current_count
       else
-        add_to_encoded_string(letter)
+        add_to_encoded_string
         reset_count(letter)
       end
     end
 
-    add_to_encoded_string(@current_character)
+    add_to_encoded_string
     @encoded
   end
 
@@ -25,7 +25,7 @@ class EncoderInstance
     @current_count += 1
   end
 
-  def add_to_encoded_string(letter)
+  def add_to_encoded_string
     @encoded = add_encoded_characters
   end
 
